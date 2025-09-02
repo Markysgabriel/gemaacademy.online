@@ -1,0 +1,66 @@
+:root{
+  --bg:#fff7fb;
+  --primary:#e86aa7;
+  --primary-dark:#d04f90;
+  --text:#3b2b2f;
+  --muted:#6b5e6c;
+  --card:#ffffff;
+  --accent:#ff5fa0;
+  --warning:#f59e0b;
+  --shadow: 0 10px 25px rgba(59,43,47,.08);
+  --radius: 16px;
+}
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; background:var(--bg); color:var(--text); font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+.wrap{ max-width:1100px; margin:0 auto; padding:24px; }
+
+header{ display:flex; align-items:center; gap:18px; padding:16px 0 8px; flex-wrap:wrap; }
+.logo{ width:72px; height:72px; border-radius:50%; background:linear-gradient(135deg,#fbd1e8,#fce7f3); display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow); overflow:hidden; }
+.logo img{ width:100%; height:100%; object-fit:cover; }
+.brand h1{ font-size:1.6rem; margin:0; font-weight:700; letter-spacing:.2px; }
+.brand p{ margin:2px 0 0; color:var(--muted); font-size:.95rem; }
+
+.hero{ margin-top:20px; background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:28px; position:relative; overflow:hidden; }
+.badge{ display:inline-flex; align-items:center; gap:8px; background:#fff1f2; color:#9d174d; padding:8px 12px; border-radius:999px; font-weight:600; font-size:.9rem; }
+.title{ font-size:2.1rem; line-height:1.2; margin:14px 0 6px; }
+.subtitle{ color:var(--muted); margin:0 0 18px; }
+.timer{ display:flex; align-items:center; gap:10px; background:#fff7ed; color:#7c2d12; border:1px solid #fed7aa; padding:10px 14px; border-radius:12px; width:max-content; font-weight:700; box-shadow:0 6px 14px rgba(124,45,18,.06); }
+.timer .dot{ width:8px; height:8px; background:var(--warning); border-radius:50%; animation:pulse 1.4s infinite; }
+@keyframes pulse{ 0%{ transform:scale(.8); opacity:.7;} 50%{ transform:scale(1.2); opacity:1;} 100%{ transform:scale(.8); opacity:.7;} }
+
+.grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:22px; margin-top:24px; }
+@media (max-width: 900px){ .grid{ grid-template-columns:1fr; } }
+
+.card{ background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:24px; }
+.list{ display:grid; gap:12px; }
+.list li{ list-style:none; background:#fdf2f8; border:1px dashed #f9a8d4; padding:12px 14px; border-radius:12px; }
+
+.offer{ display:flex; flex-direction:column; gap:14px; align-items:flex-start; justify-content:center; }
+.price{ font-size:2.6rem; font-weight:800; letter-spacing:.5px; }
+.price small{ font-size:.9rem; font-weight:600; color:var(--muted); }
+
+.cta{ display:flex; flex-direction:column; gap:10px; }
+.btn{ cursor:pointer; appearance:none; border:none; border-radius:12px; font-weight:800; letter-spacing:.3px; padding:16px 20px; transition:.2s ease; width:100%; text-align:center; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:10px; font-size:1.05rem; }
+.btn.primary{ background:var(--primary); color:#fff; box-shadow:0 8px 18px rgba(232,106,167,.25); }
+.btn.primary:hover{ background:var(--primary-dark); transform:translateY(-1px); }
+.btn.ghost{ background:#f4f4f5; color:#3f3f46; }
+.btn.ghost:hover{ background:#e8e8ea; }
+
+.guarantee{ display:flex; align-items:flex-start; gap:12px; font-size:.95rem; color:#444; }
+.guarantee .seal{ min-width:42px; height:42px; border-radius:50%; background:conic-gradient(from 45deg, #34d399, #60a5fa, #f472b6, #34d399); opacity:.25; }
+
+.proof{ display:grid; gap:12px; margin-top:14px; }
+.proof .item{ background:#fafafa; border:1px solid #eee; border-radius:12px; padding:12px 14px; }
+
+footer{ text-align:center; color:#7a7a7a; font-size:.86rem; padding:28px 0; }
+
+.modal-backdrop{ position:fixed; inset:0; background:rgba(0,0,0,.5); display:none; align-items:center; justify-content:center; z-index:50; }
+.modal{ background:#fff; border-radius:16px; max-width:640px; width:92%; box-shadow:0 20px 60px rgba(0,0,0,.25); padding:22px; }
+.modal h3{ margin:0 0 8px; }
+.modal p{ margin:0 0 16px; color:#4b5563; }
+
+.small{ font-size:.86rem; color:#6b7280; margin-top:8px; }
+.promo{ color:var(--muted); font-weight:700; }
+.note{ color:var(--muted); font-size:.95rem; margin-top:6px; }
+.accent{ color:var(--accent); font-weight:800; }
