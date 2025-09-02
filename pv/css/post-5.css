@@ -1,0 +1,29 @@
+.elementor-kit-5{--e-global-color-primary:#6EC1E4;--e-global-color-secondary:#54595F;--e-global-color-text:#7A7A7A;--e-global-color-accent:#61CE70;--e-global-typography-primary-font-family:"Poppins";--e-global-typography-primary-font-weight:600;--e-global-typography-secondary-font-family:"Poppins";--e-global-typography-secondary-font-weight:400;--e-global-typography-text-font-family:"Roboto";--e-global-typography-text-font-weight:400;--e-global-typography-accent-font-family:"Roboto";--e-global-typography-accent-font-weight:500;font-family:"Poppins", Sans-serif;}.elementor-kit-5 e-page-transition{background-color:#FFBC7D;}body{overflow-x:inherit !important;}.elementor a, .elementor a:link, .elementor a:focus, .elementor a:active, .elementor a:hover{text-decoration:inherit !important;}.elementor a:link, .elementor .smooth-hover a:link, {transition:inherit;}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1140px;}.e-con{--container-max-width:1140px;}.elementor-widget:not(:last-child){margin-block-end:20px;}.elementor-element{--widgets-spacing:20px 20px;--widgets-spacing-row:20px;--widgets-spacing-column:20px;}{}h1.entry-title{display:var(--page-title-display);}@media(max-width:1024px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:1024px;}.e-con{--container-max-width:1024px;}}@media(max-width:767px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:767px;}.e-con{--container-max-width:767px;}}/* Start custom CSS *//* 1) Mata o scroll horizontal global */
+html, body{
+  width:100% !important;
+  max-width:100% !important;
+  overflow-x:hidden !important; /* ou 'clip' em browsers modernos */
+}
+
+/* 2) Evita vazamento dos containers do Elementor */
+.elementor,
+.elementor-section,
+.elementor-container,
+.elementor-row,
+.elementor-column{
+  overflow-x:clip !important;
+}
+
+/* 3) Corrige seções esticadas que usam 100vw */
+.elementor-section-stretched{
+  width:100% !important;
+  left:0 !important;
+  right:0 !important;
+}
+
+/* 4) Garante que mídias não estourem a largura */
+img, video, iframe{
+  max-width:100% !important;
+  height:auto;
+  display:block;
+}/* End custom CSS */
