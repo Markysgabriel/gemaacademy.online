@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Dosis:wght@200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/com.css">
+
+    <!-- Título da Página -->
+    <title>Acompanhar reembolso</title>
+      
+<!-- Importação do React e Babel -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #ddd;
+            border-radius: 10px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        .progress {
+            height: 100%;
+            background: #4caf50;
+            transition: width 0.5s ease;
+        }
+    </style>
+
+  </head>
+
+<header class="py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <!-- Imagem reembolso -->
+            <img class="img-fluid" src="./assets/img/ultrasecreto.jpg">
+            <!-- Imagem reembolso -->
+
+  <body>
+   
+            
+            <h3 class="my-4"><b>Seguimiento Reembolso</b></h3>
+                            <style>
+                                body {
+                                    font-family: Arial, sans-serif;
+                                    background-color: #ffffff;
+                                    color: #000;
+                                    margin: 0;
+                                    padding: 0;
+                                }
+                                .container {
+                                    max-width: 800px;
+                                    margin: 50px auto;
+                                    padding: 20px;
+                                    background-color: #ffffff;
+                                    border-radius: 8px;
+                                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                                }
+                                h1 {
+                                    font-size: 28px;
+                                    color: #333;
+                                    margin-bottom: 10px;
+                                }
+                                p {
+                                    font-size: 16px;
+                                    line-height: 1.6;
+                                    margin-bottom: 20px;
+                                }
+                                .message {
+                                    background-color: #2867b8;
+                                    border-radius: 6px;
+                                    padding: 15px;
+                                    margin-bottom: 20px;
+                                }
+                                .message h2 {
+                                    font-size: 20px;
+                                    margin-bottom: 10px;
+                                }
+                            </style>
+                                <div class="message">
+                                    <h2></h2>
+                                    <p>El plazo para que usted reciba su reembolso puede variar según el método de pago elegido a la hora de realizar su compra. Además, el plazo puede variar según la institución financiera utilizada en la compra.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header class="py-4">
+
+<!-- BARRA DE PROGESSO -->
+    
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function RefundProgress() {
+            const [daysPassed, setDaysPassed] = React.useState(0);
+
+            React.useEffect(() => {
+                const startDate = localStorage.getItem("refundStartDate");
+                const today = new Date();
+                let daysDiff = 0;
+
+                if (!startDate) {
+                    localStorage.setItem("refundStartDate", today.toISOString());
+                } else {
+                    const start = new Date(startDate);
+                    daysDiff = Math.min(30, Math.floor((today - start) / (1000 * 60 * 60 * 24)));
+                }
+                setDaysPassed(daysDiff);
+            }, []);
+
+            const progress = (daysPassed / 30) * 100;
+            const statusUpdates = [
+                "Equipo de Digistore24",
+                "En análisis inicial",
+                "Documentos verificados",
+                "Esperando aprobación",
+                "Aprobado para su procesamiento",
+                "Proceso de pago iniciado",
+                "Esperando transferencia bancaria",
+                "Pago enviado",
+                "Confirmación del pago",
+                "Reembolso completado"
+            ];
+
+            const statusIndex = Math.min(statusUpdates.length - 1, Math.floor((daysPassed / 30) * statusUpdates.length));
+
+            return (
+                <div className="container">
+                    <h2>Guarde esta URL de forma segura para seguir el estado de su solicitud</h2>
+                    <p>Status: {statusUpdates[statusIndex]}</p>
+                    <div className="progress-bar">
+                        <div className="progress" style={{ width: `${progress}%` }}></div>
+                    </div>
+                    <p>{daysPassed} de 30 días para recibir su dinero directamente en su cuenta bancaria</p>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<RefundProgress />, document.getElementById("root"));
+    </script>
+<!-- BARRA DE PROGESSO -->
+
+<!-- Hotmart Logo-->
+    <style>
+        {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: white;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .header img {
+            height: 25px;
+            margin-right: 8px;
+        }
+        .header span {
+            font-size: 18px;
+            font-weight: bold;
+            color: #002B45;
+        }
+    </style>
+    <div class="header">
+        <img src="https://www.digistore24.com/pb/webinc/d5b7b8ef/images/brand/digistore/logo/logo_wide_monotone.svg" alt="Digistore Logo">
+        <span></span>
+    </div>
+    <!-- Hotmart Logo-->
+    </header>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="./assets/js/com.js"></script>
+  </body>
+</html>
