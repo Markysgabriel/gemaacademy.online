@@ -1,0 +1,18 @@
+/* styles.css — minimal responsive layout */
+:root{--accent:#ff3366;--bg:#fff;--muted:#666}
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, -apple-system, 'Helvetica Neue', Arial;line-height:1.5;color:#222;margin:0;background:#f7f7f9}
+.container{max-width:980px;margin:0 auto;padding:20px}
+.site-header{background:linear-gradient(90deg,#fff5f6,#fff);border-bottom:1px solid #eee;padding:18px 0}
+.banner{max-width:260px;height:auto;display:block;margin-bottom:8px}
+.nav{display:flex;gap:12px;flex-wrap:wrap;font-weight:600}
+.nav a{text-decoration:none;color:var(--muted);padding:6px 8px;border-radius:6px}
+.hero{background:linear-gradient(180deg,#fff,#fffdfc);padding:28px;border-radius:8px;margin-top:18px}
+.card{background:#fff;padding:18px;border-radius:8px;margin-top:18px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+.timeline{list-style:none;padding-left:0}
+.timeline li{padding:8px 0;border-bottom:1px dashed #eee}
+.timeline li:last-child{border-bottom:none}
+.note{font-size:0.95rem;color:var(--muted);background:#fff8f9;padding:10px;border-radius:6px;margin-top:10px}
+.site-footer{margin-top:28px;border-top:1px solid #eee;padding:20px;text-align:center;color:#666;font-size:0.95rem;background:#fff}
+.sup{font-size:0.8rem}
+@media(max-width:640px){.container{padding:14px}.nav{gap:8px}}
