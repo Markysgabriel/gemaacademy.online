@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Reembolso – Gema Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #003366;
+      --gold: #c8a84b;
+      --gold-light: #f0d48a;
+      --white: #ffffff;
+      --off-white: #f9f7f4;
+      --text: #2c2c2c;
+      --muted: #666;
+      --border: #e0d9ce;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--off-white);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--navy);
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+
+    .logo-text span {
+      color: var(--gold);
+    }
+
+    /* ── HERO BANNER ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #00509e 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 70px 24px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(200,168,75,0.2);
+      border: 1px solid var(--gold);
+      border-radius: 50px;
+      padding: 8px 22px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.82);
+      max-width: 580px;
+      margin: 0 auto 36px;
+    }
+
+    /* Guarantee seal */
+    .seal {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 140px;
+      height: 140px;
+      background: var(--gold);
+      border-radius: 50%;
+      border: 5px solid var(--gold-light);
+      box-shadow: 0 0 0 5px rgba(200,168,75,0.25), 0 12px 40px rgba(0,0,0,0.35);
+      animation: pulse 2.8s ease-in-out infinite;
+    }
+
+    .seal .days {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .seal .label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 5px rgba(200,168,75,0.25), 0 12px 40px rgba(0,0,0,0.35); }
+      50% { transform: scale(1.04); box-shadow: 0 0 0 10px rgba(200,168,75,0.15), 0 16px 50px rgba(0,0,0,0.4); }
+    }
+
+    /* ── MAIN CONTENT ── */
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    .last-updated {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-align: right;
+      margin-bottom: 40px;
+    }
+
+    /* Section cards */
+    .section-card {
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 36px 40px;
+      margin-bottom: 28px;
+      position: relative;
+      transition: box-shadow 0.25s;
+    }
+
+    .section-card:hover {
+      box-shadow: 0 6px 30px rgba(0,51,102,0.09);
+    }
+
+    .section-card .icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--navy), #00509e);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      font-size: 1.4rem;
+    }
+
+    .section-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+
+    .section-card p,
+    .section-card li {
+      font-size: 0.97rem;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .section-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .section-card ul li {
+      padding-left: 22px;
+      position: relative;
+    }
+
+    .section-card ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .section-card ul.cross li::before {
+      content: '✗';
+      color: #c0392b;
+    }
+
+    /* Steps */
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      padding: 0;
+    }
+
+    .steps li {
+      counter-increment: step;
+      padding-left: 52px;
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .steps li::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 34px;
+      height: 34px;
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .steps li strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.97rem;
+      margin-bottom: 4px;
+    }
+
+    /* Highlight box */
+    .highlight-box {
+      background: linear-gradient(135deg, #e8f0fb, #f0f7ff);
+      border-left: 4px solid var(--navy);
+      border-radius: 0 10px 10px 0;
+      padding: 20px 24px;
+      margin-top: 16px;
+      font-size: 0.95rem;
+    }
+
+    .highlight-box strong {
+      color: var(--navy);
+    }
+
+    /* Contact box */
+    .contact-box {
+      background: linear-gradient(135deg, var(--navy) 0%, #00509e 100%);
+      color: var(--white);
+      border-radius: 14px;
+      padding: 42px 40px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .contact-box h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 24px;
+    }
+
+    .contact-box a {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 14px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .contact-box a:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 30px 24px;
+      font-size: 0.82rem;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    footer a:hover { color: var(--gold); }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .section-card { padding: 26px 22px; }
+      .contact-box { padding: 30px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-text">Gema <span>Academy</span></div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Política de Reembolso</h1>
+    <p>Su satisfacción es nuestra prioridad. Compre con total confianza respaldado por nuestra garantía incondicional.</p>
+    <div class="seal">
+      <span class="days">60</span>
+      <span class="label">Días de<br>Garantía</span>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main>
+
+    <p class="last-updated">Última actualización: 1 de mayo de 2025</p>
+
+    <!-- 1. Garantía -->
+    <div class="section-card">
+      <div class="icon">🛡️</div>
+      <h2>1. Garantía de Satisfacción de 60 Días</h2>
+      <p>
+        En Gema Academy, estamos completamente comprometidos con la calidad de nuestros productos y servicios.
+        Por ello, ofrecemos una <strong>garantía incondicional de 60 días</strong> a partir de la fecha de compra procesada a través de <strong>BuyGoods</strong>.
+      </p>
+      <p>
+        Si por cualquier motivo no queda satisfecho con su adquisición, puede solicitar un reembolso completo
+        sin necesidad de proporcionar explicaciones detalladas.
+      </p>
+      <div class="highlight-box">
+        <strong>Plazo de garantía:</strong> Usted tiene <strong>60 días calendario</strong> contados desde la fecha
+        de su compra para solicitar el reembolso. Pasado ese plazo, no podremos procesar solicitudes de devolución.
+      </div>
+    </div>
+
+    <!-- 2. Condiciones elegibles -->
+    <div class="section-card">
+      <div class="icon">✅</div>
+      <h2>2. Condiciones para Solicitar el Reembolso</h2>
+      <p>Su solicitud de reembolso será aceptada si se cumple alguna de las siguientes condiciones:</p>
+      <ul>
+        <li>La solicitud se realiza dentro del período de 60 días desde la compra.</li>
+        <li>El producto no cumplió con las expectativas prometidas en la oferta.</li>
+        <li>Experimentó dificultades técnicas que impidieron el acceso al contenido.</li>
+        <li>Fue realizada una compra duplicada o no autorizada.</li>
+        <li>El contenido fue significativamente diferente a lo descrito.</li>
+        <li>Cualquier otra razón justificada a criterio del cliente.</li>
+      </ul>
+    </div>
+
+    <!-- 3. No aplica -->
+    <div class="section-card">
+      <div class="icon">⚠️</div>
+      <h2>3. Casos en Que No Aplica el Reembolso</h2>
+      <p>El reembolso no procederá en los siguientes supuestos:</p>
+      <ul class="cross">
+        <li>La solicitud se presenta después de los 60 días calendario desde la compra.</li>
+        <li>Se detecta uso fraudulento o abuso sistemático de la política de reembolso.</li>
+        <li>La cuenta del cliente fue suspendida por violación de los Términos y Condiciones.</li>
+        <li>El producto fue adquirido a través de una plataforma distinta a BuyGoods.</li>
+      </ul>
+    </div>
+
+    <!-- 4. Proceso -->
+    <div class="section-card">
+      <div class="icon">📬</div>
+      <h2>4. Proceso para Solicitar el Reembolso</h2>
+      <p>Siga estos sencillos pasos para gestionar su devolución:</p>
+      <ol class="steps">
+        <li>
+          <strong>Contacte a BuyGoods directamente</strong>
+          Acceda al soporte oficial de BuyGoods en <a href="https://www.buygoods.com" target="_blank" style="color:var(--navy);font-weight:700;">www.buygoods.com</a> o envíe un correo a <strong>support@buygoods.com</strong>.
+        </li>
+        <li>
+          <strong>Proporcione los datos de su compra</strong>
+          Incluya su nombre completo, dirección de correo electrónico registrado y el número de pedido (Order ID) que encontrará en el correo de confirmación de compra.
+        </li>
+        <li>
+          <strong>Indique el motivo de la solicitud</strong>
+          Aunque no es obligatorio, puede indicar brevemente el motivo de su solicitud para ayudarnos a mejorar.
+        </li>
+        <li>
+          <strong>Espere la confirmación</strong>
+          BuyGoods procesará su solicitud. Una vez aprobada, el reembolso se acreditará en su método de pago original en un plazo de <strong>5 a 10 días hábiles</strong>, según su banco o proveedor de pago.
+        </li>
+      </ol>
+    </div>
+
+    <!-- 5. Tiempos de procesamiento -->
+    <div class="section-card">
+      <div class="icon">⏱️</div>
+      <h2>5. Tiempos de Procesamiento</h2>
+      <p>
+        Una vez que BuyGoods apruebe su solicitud de reembolso, los tiempos estimados de acreditación son:
+      </p>
+      <ul>
+        <li><strong>Tarjeta de crédito o débito:</strong> 5 a 10 días hábiles.</li>
+        <li><strong>PayPal:</strong> 3 a 5 días hábiles.</li>
+        <li><strong>Otros métodos:</strong> hasta 10 días hábiles.</li>
+      </ul>
+      <div class="highlight-box">
+        Los tiempos pueden variar según la institución financiera del cliente. Gema Academy no tiene control sobre los plazos internos de los bancos o procesadores de pago.
+      </div>
+    </div>
+
+    <!-- 6. Procesador de pagos -->
+    <div class="section-card">
+      <div class="icon">🏦</div>
+      <h2>6. Procesador de Pagos: BuyGoods</h2>
+      <p>
+        Todas las transacciones de compra y reembolso son gestionadas de forma segura y exclusiva por <strong>BuyGoods</strong>,
+        nuestro procesador de pagos oficial. BuyGoods es responsable de verificar los datos de la compra
+        y de ejecutar el reembolso en conformidad con esta política.
+      </p>
+      <p>
+        Al completar su compra a través de BuyGoods, usted acepta los Términos de Servicio de BuyGoods además
+        de la presente política de reembolso de Gema Academy.
+      </p>
+    </div>
+
+    <!-- 7. Modificaciones -->
+    <div class="section-card">
+      <div class="icon">📝</div>
+      <h2>7. Modificaciones a Esta Política</h2>
+      <p>
+        Gema Academy se reserva el derecho de actualizar o modificar esta Política de Reembolso en cualquier
+        momento. Cualquier cambio entrará en vigor a partir de su publicación en este sitio web.
+        Se recomienda revisar esta página periódicamente.
+      </p>
+      <p>
+        Las solicitudes de reembolso se regirán siempre por la versión de la política vigente en la
+        <strong>fecha de compra original</strong>.
+      </p>
+    </div>
+
+    <!-- CTA Contact -->
+    <div class="contact-box">
+      <h2>¿Necesita Ayuda?</h2>
+      <p>Nuestro equipo y el soporte de BuyGoods están disponibles para asistirle en cualquier momento.</p>
+      <a href="mailto:support@buygoods.com">Contactar Soporte</a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Gema Academy – Todos los derechos reservados</p>
+    <p style="margin-top:10px;">
+      <a href="https://gemaacademy.online/privac/">Política de Privacidad</a> |
+      <a href="https://gemaacademy.online/terminos/">Términos y Condiciones</a> |
+      <a href="https://gemaacademy.online/contact/">Contáctenos</a> |
+      <a href="https://gemaacademy.online/responsabilidad/">Descargo de responsabilidad</a> |
+      <a href="https://gemaacademy.online/refund/">Refund Policy</a>
+    </p>
+  </footer>
+
+</body>
+</html>
